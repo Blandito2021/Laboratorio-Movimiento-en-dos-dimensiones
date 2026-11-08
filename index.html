@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="Luis Hernando Blandón Dávila">
+<meta name="copyright" content="© 2026 Luis Hernando Blandón Dávila. Todos los derechos reservados.">
+<!-- © 2026 Luis Hernando Blandón Dávila. Todos los derechos reservados. Prohibida su copia, modificación o distribución, total o parcial, sin autorización escrita del autor. -->
 <title>Laboratorio Virtual · Informe 5 UTP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -762,7 +765,7 @@ table.data input[readonly]{background:transparent;border-color:transparent;curso
   </div>
 </section>
 
-<div class="footer wrap" style="margin-top:1rem">Laboratorio virtual de la práctica 5 · Física I · Universidad Tecnológica de Pereira. Elaborado por Luis Hernando Blandón Dávila.</div>
+<div class="footer wrap" style="margin-top:1rem">Laboratorio virtual de la práctica 5 · Física I · Universidad Tecnológica de Pereira. Elaborado por Luis Hernando Blandón Dávila.<br>© 2026 Luis Hernando Blandón Dávila · Todos los derechos reservados. Prohibida su copia, modificación o distribución sin autorización del autor.</div>
 </main>
 <div class="toast" id="toast" hidden></div>
 
@@ -803,6 +806,7 @@ table.data input[readonly]{background:transparent;border-color:transparent;curso
 <script type="text/plain" id="gasCode">
 /**
  * Puente entre el Laboratorio Virtual «Movimiento en dos dimensiones» (UTP) y una hoja de cálculo de Google.
+ * © 2026 Luis Hernando Blandón Dávila. Todos los derechos reservados.
  * El propio script CREA la hoja de cálculo la primera vez que se ejecuta.
  *
  * Instalación (una sola vez):
@@ -2065,7 +2069,7 @@ function renderReport(){
      <tr><td style="text-align:left">g de referencia (Pereira)</td><td>9.78 m/s²</td><td style="text-align:left">Error relativo</td><td>${E.toFixed(2)} %</td></tr></tbody></table>`:'<p>No hay datos suficientes para el ajuste (mínimo 3 ángulos).</p>'}
    <h2>Conclusiones</h2>
    ${S.concl.map((c,i)=>`<p><b>${i+1}.</b> ${esc(c)||'<span style="color:#888">(pendiente)</span>'}</p>`).join('')}
-   <p style="margin-top:1.6rem;font-size:11px;color:#555">Datos obtenidos con el laboratorio virtual de la práctica 5 (Física I, UTP).</p>`;
+   <p style="margin-top:1.6rem;font-size:11px;color:#555">Datos obtenidos con el laboratorio virtual de la práctica 5 (Física I, UTP). Laboratorio virtual © 2026 Luis Hernando Blandón Dávila · Todos los derechos reservados.</p>`;
   // gráfico del informe en colores de papel
   if(repChart){ repChart.destroy(); repChart=null; }
   const cv=$('#repCanvas'); if(!cv) return;
@@ -2265,7 +2269,7 @@ function tutRender(){ const cv=$('#tutCanvas'), c=cv.getContext('2d'); const L=t
   c.setTransform(1,0,0,1,0,0); c.fillStyle=TC.bg; c.fillRect(0,0,cv.width,cv.height); c.setTransform(TUT.dpr*TUT.k,0,0,TUT.dpr*TUT.k,TUT.dpr*TUT.ox,TUT.dpr*TUT.oy);
   c.strokeStyle=TC.grid; c.lineWidth=1; c.beginPath(); for(let x=0;x<=1280;x+=40){ c.moveTo(x,0); c.lineTo(x,720);} for(let y=0;y<=720;y+=40){ c.moveTo(0,y); c.lineTo(1280,y);} c.stroke();
   const u=L.lt/L.sc.dur; c.save(); const fade=Math.min(1,L.lt/0.35, (L.sc.dur-L.lt)/0.35); c.globalAlpha=Math.max(0,fade); try{ L.sc.draw(c,u,L.lt,L.sc); }catch(e){ console.error(e); } c.restore();
-  tTxt(c,`${L.i+1}/${TUT.scenes.length} · ${L.sc.ch}`,1240,690,{align:'right',size:16,color:TC.mut,w:500}); tTxt(c,'UTP · Física I',40,690,{size:16,color:TC.mut,w:500});
+  tTxt(c,`${L.i+1}/${TUT.scenes.length} · ${L.sc.ch}`,1240,690,{align:'right',size:16,color:TC.mut,w:500}); tTxt(c,'UTP · Física I · © 2026 L. H. Blandón D.',40,690,{size:16,color:TC.mut,w:500});
   const key=L.i+':'+L.bi; if(key!==TUT.key){ TUT.key=key; const b=L.sc.beats[L.bi]; $('#tutCC').textContent= (TUT.cc&&b)? b.t : ''; if(TUT.playing&&TUT.voice&&b){ tutSpeak(b.t); TUT.spoken=key; } }
   if(!TUT.cc) $('#tutCC').textContent='';
   const fmtT=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`; $('#tutTime').textContent=`${fmtT(TUT.t)} / ${fmtT(TUT.total)}`; $('#tutFill').style.width=(100*TUT.t/TUT.total)+'%';
