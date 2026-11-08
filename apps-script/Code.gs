@@ -1,5 +1,6 @@
 /**
  * Puente entre el Laboratorio Virtual «Movimiento en dos dimensiones» (UTP) y una hoja de cálculo de Google.
+ * © 2026 Luis Hernando Blandón Dávila. Todos los derechos reservados.
  * El propio script CREA la hoja de cálculo la primera vez que se ejecuta.
  *
  * Instalación (una sola vez):
